@@ -1,11 +1,23 @@
+
+-- return {
+--  "ellisonleao/gruvbox.nvim",
+--  priority = 1000,
+--  config = function()
+--    require("gruvbox").setup({
+      -- custom options
+--    })
+--   vim.cmd("colorscheme gruvbox")
+-- end
+--}  
+
 return {
-  "ellisonleao/gruvbox.nvim",
+  "folke/tokyonight.nvim",
   priority = 1000,
   config = function()
-    require("gruvbox").setup({
+    require("tokyonight").setup({
       -- custom options
+      style = "night"
     })
-    vim.cmd("colorscheme gruvbox")
+    vim.cmd("colorscheme tokyonight")
   end
-}
-
+} 
