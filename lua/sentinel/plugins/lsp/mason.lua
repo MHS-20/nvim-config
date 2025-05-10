@@ -57,15 +57,14 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"prettier", -- prettier formatter
-				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
+				"prettier",
+				"stylua",
+				"isort",
+				"black",
 				"gofumpt",
 				"goimports",
 				"rustfmt",
 				"google-java-format",
-				"ktlint",
 				"ktfmt",
 				"clang-format",
 				"shfmt",
@@ -75,6 +74,23 @@ return {
 				"ansible-lint",
 				"sql-formatter",
 				"xmlformatter",
+
+				-- Linters
+				"eslint_d", -- JS, TS, Svelte, React
+				"pylint", -- Python
+				"golangci-lint", -- Go
+				"rstcheck", -- Rust
+				"checkstyle", -- Java
+				"ktlint", -- Kotlin
+				"cpplint", -- C, C++
+				"shellcheck", -- Shell
+				"hadolint", -- Docker
+				"yamllint", -- YAML
+				"jsonlint", -- JSON
+				"tflint", -- Terraform
+				"ansible-lint", -- Ansible
+				"sqlfluff", -- SQL
+				"stylelint", -- CSS, SCSS, Less
 			},
 		})
 	end,

@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/neodev.nvim", opts = {} },
+		{ "folke/neodev.nvim",                   opts = {} },
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -78,20 +78,39 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		--		mason_lspconfig.setup_handlers({
-		-- default handler for installed servers
-		--			function(server_name)
-		--				lspconfig[server_name].setup({
-		--					capabilities = capabilities,
-		--				})
-		--			end,
+		-- mason_lspconfig.setup_handlers({
+		-- -- default handler for installed servers
+		-- 	function(server_name)
+		-- 		lspconfig[server_name].setup({
+		-- 			capabilities = capabilities,
+		-- 				})
+		-- 	end,
 
-		mason_lspconfig.setup() -- assicurati che questo venga prima
+		-- mason_lspconfig.setup()
+		-- for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
+		-- 	lspconfig[server].setup({
+		-- 		capabilities = capabilities,
+		-- 	})
+		-- end
 
-		for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
-			lspconfig[server].setup({
-				capabilities = capabilities,
-			})
+		local installed_servers = mason_lspconfig.get_installed_servers()
+		for _, server_name in ipairs(installed_servers) do
+			if server_name == "lua_ls" then
+				lspconfig.lua_ls.setup({
+					capabilities = capabilities,
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { "vim" },
+							},
+						},
+					},
+				})
+			else
+				lspconfig[server_name].setup({
+					capabilities = capabilities,
+				})
+			end
 		end
 	end,
 }
