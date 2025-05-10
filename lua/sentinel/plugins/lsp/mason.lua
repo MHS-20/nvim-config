@@ -27,7 +27,6 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				--        "tsserver",
 				"html",
 				"cssls",
 				"lua_ls",
@@ -39,7 +38,6 @@ return {
 				"rust_analyzer",
 				"jdtls",
 				"kotlin_language_server",
-				--    "scalametals",
 				"clangd",
 				"cmake",
 				"bashls",
@@ -76,21 +74,21 @@ return {
 				"xmlformatter",
 
 				-- Linters
-				"eslint_d", -- JS, TS, Svelte, React
-				"pylint", -- Python
-				"golangci-lint", -- Go
-				"rstcheck", -- Rust
-				"checkstyle", -- Java
-				"ktlint", -- Kotlin
-				"cpplint", -- C, C++
-				"shellcheck", -- Shell
-				"hadolint", -- Docker
-				"yamllint", -- YAML
-				"jsonlint", -- JSON
+				"eslint_d",
+				"pylint",
+				"golangci-lint",
+				"rstcheck",
+				"checkstyle",
+				"ktlint",
+				"cpplint",
+				"shellcheck",
+				"hadolint",
+				"yamllint",
+				"jsonlint",
 				"tflint", -- Terraform
-				"ansible-lint", -- Ansible
-				"sqlfluff", -- SQL
-				"stylelint", -- CSS, SCSS, Less
+				"ansible-lint",
+				"sqlfluff",
+				"stylelint",
 			},
 		})
 	end,
