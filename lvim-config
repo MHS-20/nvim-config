@@ -1,0 +1,21 @@
+vim.opt.relativenumber = true
+vim.opt.number = true
+
+lvim.keys.insert_mode["jk"] = "<ESC>"
+lvim.builtin.terminal.open_mapping = "<leader>tt"
+
+lvim.keys.normal_mode["<leader>sv"] = "<C-w>v"
+lvim.keys.normal_mode["<leader>sx"] = "<cmd>close<CR>"
+
+lvim.keys.normal_mode["<leader>to"] = "<cmd>tabnew<CR>"
+lvim.keys.normal_mode["<leader>tn"] = "<cmd>tabnext<CR>"
+lvim.keys.normal_mode["<leader>tp"] = "<cmd>tabprevious<CR>"
+lvim.keys.normal_mode["<leader>tx"] = "<cmd>tabclose<CR>"
+
+lvim.builtin.which_key.mappings["t"] = {
+  name = "Tabs",
+  o = { "<cmd>tabnew<CR>", "Open new tab" },
+  n = { "<cmd>tabnext<CR>", "Next tab" },
+  p = { "<cmd>tabprevious<CR>", "Previous tab" },
+  x = { "<cmd>tabclose<CR>", "Close current tab" },
+}
